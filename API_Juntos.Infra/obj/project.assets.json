@@ -1,0 +1,90 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "API_Juntos.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/API_Juntos.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/API_Juntos.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "API_Juntos.Core/1.0.0": {
+      "type": "project",
+      "path": "../API_Juntos.Core/API_Juntos.Core.csproj",
+      "msbuildProject": "../API_Juntos.Core/API_Juntos.Core.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "API_Juntos.Core >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\macac\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\macac\\Desktop\\Jessica\\Programação\\Projetos\\API_Juntos_Clone\\API_Juntos.Infra\\API_Juntos.Infra.csproj",
+      "projectName": "API_Juntos.Infra",
+      "projectPath": "C:\\Users\\macac\\Desktop\\Jessica\\Programação\\Projetos\\API_Juntos_Clone\\API_Juntos.Infra\\API_Juntos.Infra.csproj",
+      "packagesPath": "C:\\Users\\macac\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\macac\\Desktop\\Jessica\\Programação\\Projetos\\API_Juntos_Clone\\API_Juntos.Infra\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\macac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\macac\\Desktop\\Jessica\\Programação\\Projetos\\API_Juntos_Clone\\API_Juntos.Core\\API_Juntos.Core.csproj": {
+              "projectPath": "C:\\Users\\macac\\Desktop\\Jessica\\Programação\\Projetos\\API_Juntos_Clone\\API_Juntos.Core\\API_Juntos.Core.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

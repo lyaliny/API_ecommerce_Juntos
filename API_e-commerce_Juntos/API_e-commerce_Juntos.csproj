@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>API_e_commerce_Juntos</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API_Juntos.Application\API_Juntos.Application.csproj" />
+    <ProjectReference Include="..\API_Juntos.Infra\API_Juntos.Infra.csproj" />
+  </ItemGroup>
+
+</Project>

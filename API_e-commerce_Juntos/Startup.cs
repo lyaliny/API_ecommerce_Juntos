@@ -1,14 +1,21 @@
 using API_Juntos.Application.Mappings;
 using API_Juntos.Application.Models.InserirUsuario;
+using API_Juntos.Application.Models.Pedidos.AtualizarPedido;
+using API_Juntos.Application.Models.Pedidos.ExcluirPedidos;
+using API_Juntos.Application.Models.Pedidos.InserirPedido;
+using API_Juntos.Application.Models.Pedidos.ListarPedidoPorId;
+using API_Juntos.Application.Models.Pedidos.ListarPedidos;
 using API_Juntos.Application.Models.Produtos.AdicionarProduto;
 using API_Juntos.Application.Models.Produtos.AtualizarProduto;
 using API_Juntos.Application.Models.Produtos.ListarProdutoPorId;
+using API_Juntos.Application.Models.Produtos.ListarProdutos;
 using API_Juntos.Application.Models.Usuario.AtualizarUsuario;
 using API_Juntos.Application.Models.Usuario.ExcluirUsuario;
 using API_Juntos.Application.Models.Usuario.ListarUsuario;
 using API_Juntos.Application.Models.Usuario.ListarUsuarioPorId;
 using API_Juntos.Application.Models.Usuario.ListarUsuarios;
 using API_Juntos.Application.UseCases;
+using API_Juntos.Application.UseCases.Pedidos;
 using API_Juntos.Application.UseCases.Produtos;
 using API_Juntos.Application.UseCases.Usuarios;
 using API_Juntos.Core.Repositorios;
@@ -51,7 +58,16 @@ namespace API_e_commerce_Juntos
             services.AddTransient<IUseCaseAsync<ListarUsuariosRequest, List<ListarUsuariosResponse>>, ListarUsuariosUseCase>();
             services.AddTransient<IUseCaseAsync<InserirProdutoRequest, InserirProdutoResponse>, InserirProdutoUseCase > ();
             services.AddTransient<IUseCaseAsync<AtualizarProdutoRequest, AtualizarProdutoResponse>, AtualizarProdutoUseCase>();
+            services.AddTransient<IUseCaseAsync<ListarProdutosRequest, List<ListarProdutosResponse>>, ListarProdutosUseCase>();
             services.AddTransient<IUseCaseAsync<ListarProdutoPorIdRequest, ListarProdutoPorIdResponse>, ListarProdutoPorIdUseCase>();
+            services.AddTransient<IUseCaseAsync<InserirPedidoRequest, InserirPedidoResponse>, InserirPedidoUseCase>();
+            services.AddTransient<IUseCaseAsync<AtualizarPedidoRequest, AtualizarPedidoResponse>, AtualizarPedidoUseCase>();
+            services.AddTransient<IUseCaseAsync<ExcluirPedidoRequest, ExcluirPedidoResponse>, ExcluirPedidoUseCase>();
+            services.AddTransient<IUseCaseAsync<ListarPedidoPorIdRequest, ListarPedidoPorIdResponse>, ListarPedidoPorIdUseCase>();
+            services.AddTransient<IUseCaseAsync<ListarPedidosRequest, List<ListarPedidosResponse>>, ListarPedidosUseCase>();
+
+
+
             
 
             services.AddAutoMapper(typeof(MappingProfile)); //SERIA MAIS ADEQUADO O TRANSIENT OU SCOPED?

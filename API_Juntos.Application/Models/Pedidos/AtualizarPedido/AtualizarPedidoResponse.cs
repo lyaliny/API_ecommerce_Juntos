@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API_Juntos.Application.Models.Pedidos.AtualizarPedido
 {
-    internal class AtualizarPedidoResponse
+    public class AtualizarPedidoResponse
     {
     }
 }

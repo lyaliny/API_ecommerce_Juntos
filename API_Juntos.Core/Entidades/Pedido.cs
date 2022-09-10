@@ -13,7 +13,7 @@ namespace API_Juntos.Core.Entidades
         public DateTime DataPedido  { get; set; }
         public List<Produto> Produtos { get; set; }
         public int IdUsuario { get; set; }
-        public Usuario_ Usuario { get; set; }
+        public Usuario Usuario { get; set; }
 
         //status do pedido????
         

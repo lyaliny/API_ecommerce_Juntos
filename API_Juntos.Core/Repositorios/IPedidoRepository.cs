@@ -12,6 +12,7 @@ namespace API_Juntos.Core.Repositorios
         //quais usuarios fizeram mais pedidos no periodo - tomada de decisão?
         //listar itens do pedido
         //status pedidos
+        public Task<List<Produto>> ObterTotal(); //algo do tipo para somar o valor dos produtos no método do repository?
 
     }
 }

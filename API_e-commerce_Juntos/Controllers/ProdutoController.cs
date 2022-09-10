@@ -2,8 +2,10 @@
 using API_Juntos.Application.Models.Produtos.AtualizarProduto;
 using API_Juntos.Application.Models.Produtos.ExcluirProduto;
 using API_Juntos.Application.Models.Produtos.ListarProdutoPorId;
+using API_Juntos.Application.Models.Produtos.ListarProdutos;
 using API_Juntos.Application.UseCases;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace API_e_commerce_Juntos.Controllers
@@ -16,16 +18,19 @@ namespace API_e_commerce_Juntos.Controllers
         private readonly IUseCaseAsync<AtualizarProdutoRequest, AtualizarProdutoResponse> _useCaseAtualizar;
         private readonly IUseCaseAsync<ExcluirProdutoRequest, ExcluirProdutoResponse> _useCaseExcluir;
         private readonly IUseCaseAsync<ListarProdutoPorIdRequest, ListarProdutoPorIdResponse> _useCaseListarPorId;
+        private readonly IUseCaseAsync<ListarProdutosRequest, List<ListarProdutosResponse>> _useCaseListarProdutos;
 
         public ProdutoController(IUseCaseAsync<InserirProdutoRequest, InserirProdutoResponse> useCaseInserir,
             IUseCaseAsync<AtualizarProdutoRequest, AtualizarProdutoResponse> useCaseAtualizar,
             IUseCaseAsync<ExcluirProdutoRequest, ExcluirProdutoResponse> useCaseExcluir,
-            IUseCaseAsync<ListarProdutoPorIdRequest, ListarProdutoPorIdResponse> useCaseListarPorId)
+            IUseCaseAsync<ListarProdutoPorIdRequest, ListarProdutoPorIdResponse> useCaseListarPorId,
+            IUseCaseAsync<ListarProdutosRequest, List<ListarProdutosResponse>> useCaseListarProdutos)
         {
             _useCaseInserir = useCaseInserir;
             _useCaseAtualizar = useCaseAtualizar;
             _useCaseExcluir = useCaseExcluir;
             _useCaseListarPorId = useCaseListarPorId;
+            _useCaseListarProdutos = useCaseListarProdutos;
         }
 
         [HttpPost]
@@ -51,6 +56,12 @@ namespace API_e_commerce_Juntos.Controllers
         {
             return await _useCaseListarPorId.ExecuteAsync(new ListarProdutoPorIdRequest() { Id = id });
 
+        }
+
+        [HttpGet("listar_todos")]
+        public async Task<ActionResult<List<ListarProdutosResponse>>> Get([FromQuery] ListarProdutosRequest request)
+        {
+            return await _useCaseListarProdutos.ExecuteAsync(request); //é preciso manter o request acima???
         }
 
 
